@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+
+
+@font-face {
+    font-family: "VT323";
+    font-weight: 400;
+    font-style: normal;
+    src: url("/fonts/VT323-Regular.ttf");
+}
+
+@theme {
+
+    --color-light-grey: #dfdfdf;
+    --color-off-white: #f9f9f9;
+    
+    --font-primary: "VT323", monospace;
+    /* 
+    --font-martel: "Martel", "serif";
+    
+    --color-primary: #F9AB45;
+    
+    --breakpoint-xl: 1280px;
+    */
+    
+    --spacing-0hem: 0.5em;
+    --spacing-1em: 1em;
+    --spacing-1hem: 1.5em;
+    --spacing-2em: 2em;
+    --spacing-2hem: 2.5em;
+    --spacing-3em: 3em;
+    --spacing-3hem: 3.5em;
+    --spacing-4em: 4em;
+    --spacing-4hem: 4.5em;
+    --spacing-5em: 5em;
+    --spacing-5hem: 5.5em;
+    --spacing-6em: 6em;
+    --spacing-6hem: 6.5em;
+    --spacing-7em: 7em;
+    --spacing-7hem: 7.5em;
+    --spacing-8em: 8em;
+    --spacing-8hem: 8.5em;
+    --spacing-9em: 9em;
+    --spacing-9hem: 9.5em;
+    --spacing-10em: 10em;
+    --spacing-10hem: 10.5em;
+}
+
+svg {
+    @apply w-full h-full;
+}
+
+textarea {
+    resize: none;
+}
+
+body {
+    @apply font-primary bg-white
+}
+
+input[type="text"] {
+    @apply focus:ring-0 outline-none focus-within:outline-none
+}
+
+.absoluteCenter{
+    @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+
+}
+.fixedCenter{
+    @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+
+}
+
+img{
+    @apply w-full h-full object-contain
+}
+
+.buttonActive{
+    @apply shadow-[inset_0_0_0_4px_black]
+}
+
+/* disable unecessary touches */
+body {
+
+    overscroll-behavior: none;
+    touch-action: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+html, body {
+    overscroll-behavior-y: contain;
+    position: fixed;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+* {
+    touch-action: manipulation;
+}
+
+/* .mainContainer{
+    @apply mx-auto w-[90%] lg:w-[85%] xl:w-[80%]
+} */
+

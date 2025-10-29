@@ -1,0 +1,20 @@
+import { writeFile } from 'fs/promises';
+
+export const actions = {
+    saveAssets: async ({ request }) => {
+        try {
+            console.log('Saving assets...');
+            const formData = await request.formData();
+            const assetsString = formData.get('assets');
+            const assets = JSON.parse(assetsString);
+            
+            // Write to root directory
+            await writeFile('./src/lib/assets.json', JSON.stringify(assets, null, 2), 'utf-8');
+            
+            return { success: true, message: 'Assets saved successfully!' };
+        } catch (error) {
+            console.error('Error saving assets:', error);
+            return { success: false, error: error.message };
+        }
+    }
+};
